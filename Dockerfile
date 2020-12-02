@@ -35,8 +35,8 @@ RUN sed -i 's|#\s*cfg_dir=/usr/local/nagios/etc/routers|cfg_dir=/usr/local/nagio
 
 COPY  ./supervisor.conf /etc/supervisor.conf
 COPY ./supervisor-apache2.conf /etc/supervisor/conf.d/apache2.conf
-#COPY ./supervisor-nagios.conf /etc/supervisor/conf.d/nagios.conf
+COPY ./supervisor-nagios.conf /etc/supervisor/conf.d/nagios.conf
 
 EXPOSE 80
 
-RUN supervisord -c /etc/supervisor.conf
+CMD supervisord -c /etc/supervisor.conf

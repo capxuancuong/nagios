@@ -1,11 +1,10 @@
-  
 version: '3.0'
 services:
     nagios: 
         build:
             context: .
             dockerfile: ./Dockerfile
-        #volumes:
-        #    - ./monitors:/usr/local/nagios/etc/monitors
+        volumes:
+            - ./monitors:/usr/local/nagios/etc/monitors
         ports:
-            - '8088:80/tcp'  #<--TODO EDIT
+            - '80:80/tcp'  #<--TODO EDIT
